@@ -49,13 +49,13 @@ if (IS_MOBILE) {
 							title="<?php echo htmlspecialchars(t($conf->get('/config/imagevue/settings/autoTitling') ? $this->file->getTitle() : $this->file->title)); ?>">
 						<?php endif; ?>
 
-							<img id="<?php echo htmlspecialchars($fotomotoId); ?>"
+							<img class="single_image" id="<?php echo htmlspecialchars($fotomotoId); ?>"
 								src="<?php echo htmlspecialchars($this->file->getPath()); ?>"
 								alt="<?php echo htmlspecialchars(t($conf->get('/config/imagevue/settings/autoTitling') ? $this->file->getTitle() : $this->file->title)); ?>"
 								width="<?php echo htmlspecialchars($this->file->width); ?>"
 								height="<?php echo htmlspecialchars($this->file->height); ?>"
 								style="background: #<?php echo ivPool::get('conf')->get('/config/imagevue/thumbnails/thumbnail/backgroundColor')?>"
-								class="single_image <?php echo ($this->file->width > $this->file->height)?'horizontal':'vertical' ?>"
+								class="<?php echo ($this->file->width > $this->file->height)?'horizontal':'vertical' ?>"
 							/>
 						<?php if(!IS_MOBILE): ?>
 							</a>

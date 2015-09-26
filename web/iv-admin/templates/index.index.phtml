@@ -60,7 +60,7 @@
 		<?php if ($this->folder->isFilemod()): ?>
 
 			<div class="row special">
-				<label>Filemod <a title="About Imagevue Filemod" class="iv-help" target="_blank" href="http://imagevuex.com/documentation/filemod/"></a>
+				<label>Filemod <a title="About Imagevue Filemod" class="iv-help" target="_blank" href="http://nullrefer.com/?http://imagevuex.com/documentation/filemod/"></a>
 				</label>
 				<select name="newdata[fileMod]">
 					<option value="slideshow" <?php echo ('slideshow' == $this->folder->fileMod ? 'selected="selected"' : ''); ?>>Slideshow&nbsp;&nbsp;</option>
@@ -110,7 +110,7 @@
 				<?php endif; ?>
 				<label>
 					<?php echo ($this->folder->hasPassword() ? 'Change ' : 'Set ') ?> Folder Password
-					<a class="iv-help" target="_blank" title="About Folder Passwords" href="http://imagevuex.com/documentation/folder-passwords/"></a>
+					<a class="iv-help" target="_blank" title="About Folder Passwords" href="http://nullrefer.com/?http://imagevuex.com/documentation/folder-passwords/"></a>
 				</label>
 				<input type="password" class="text" name="folderPwd" value="<?php echo ($this->folder->hasPassword() ? '******' : '') ?>" autocomplete="off" />
 			<?php else: ?>
@@ -122,7 +122,7 @@
 		<div class="row">
 			<label class="inline" id="folderParameters" <?php echo ($this->folder->parameters) ? 'class="collapse"' : '' ?> onclick="$('#folderP').toggle(); $('#folderParameters').toggleClass('collapse');">Parameters
 				</label>
-				<a class="iv-help" target="_blank" title="About Folder Parameters" href="http://imagevuex.com/documentation/folder-parameters/"></a>
+				<a class="iv-help" target="_blank" title="About Folder Parameters" href="http://nullrefer.com/?http://imagevuex.com/documentation/folder-parameters/"></a>
 			<div class="textarea" id="folderP" <?php echo ($this->folder->parameters) ? '' : 'style="display: none"' ?>>
 				<textarea cols="20" rows="5" name="newdata[parameters]"><?php echo htmlspecialchars($this->folder->parameters); ?></textarea>
 			</div>
@@ -175,7 +175,7 @@
 							&nbsp;selected to:
 						</span>
 						<span>
-							<select onchange="if ($('#groupCopyCheckbox').prop('checked')) {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'copyFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} else {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'moveFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} $(this.form).submit();">
+							<select onchange="if ($('#groupCopyCheckbox').attr('checked')) {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'copyFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} else {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'moveFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} $(this.form).submit();">
 								<?php foreach ($this->folderTreeIterator as $folder):?>
 									<option value="<?php echo htmlspecialchars($folder->getPrimary()); ?>" <?php echo (ivFilepath::directory($this->path) == $folder->getPrimary() ? 'selected="selected"' : ''); ?>><?php echo str_repeat('--', $this->folderTreeIterator->getDepth()); ?> <?php echo smartStripTagsSubstr(t($folder->getTitle())); ?>&nbsp;&nbsp;</option>
 								<?php endforeach; ?>
@@ -273,7 +273,7 @@
 			<?php if (!in_array('noteTextpage', ivPool::get('notes'))): ?>
 				<div class="note">
 					<a id="noteTextpage" class="close" href="#">&times;</a>
-					This folder will display as a text page. <a title="About Imagevue Textpages" class="iv-ext" target="_blank" href="http://imagevuex.com/documentation/textpages/">About Textpages</a>
+					This folder will display as a text page. <a title="About Imagevue Textpages" class="iv-ext" target="_blank" href="http://nullrefer.com/?http://imagevuex.com/documentation/textpages/">About Textpages</a>
 				</div>
 			<?php endif; ?>
 			<form method="post" class="textPage" action="">
@@ -383,14 +383,14 @@
 					<div class="note">
 						<a id="noteFilemod" class="close" href="#">&times;</a>
 						The file module allows you to create custom pages in your Imagevue gallery.
-						<a title="About Imagevue Filemod" class="iv-ext" target="_blank" href="http://imagevuex.com/documentation/filemod/">About Imagevue Filemod</a>
+						<a title="About Imagevue Filemod" class="iv-ext" target="_blank" href="http://nullrefer.com/?http://imagevuex.com/documentation/filemod/">About Imagevue Filemod</a>
 					</div>
 				<?php endif ?>
 			<?php else: ?>
 				<?php if (!in_array('noteManage', ivPool::get('notes')) && !$this->folder->isPage()): ?>
 					<div class="note">
 						<a id="noteManage" class="close" href="#">&times;</a>
-						Drag images and folders to sort them. <strong>Ctrl+A / Cmd+A</strong> selects all images for mass operations. <a class="iv-ext" title="About Imagevue file management" href="http://imagevuex.com/documentation/manage-page/" target="_blank">Imagevue file management</a>
+						Drag images and folders to sort them. <strong>Ctrl+A / Cmd+A</strong> selects all images for mass operations. <a class="iv-ext" title="About Imagevue file management" href="http://nullrefer.com/?http://imagevuex.com/documentation/manage-page/" target="_blank">Imagevue file management</a>
 					</div>
 				<?php endif ?>
 			<?php endif ?>
@@ -684,7 +684,7 @@
 	<?php if (('html' != $this->uploaderType) || class_exists('ivImageAdapterImagick') || class_exists('ivImageAdapterImagemagick')): ?>
 		<fieldset>
 			<div class="row">
-				<a class="iv-ext" target="_blank" title="About Uploader Image Resizer" href="http://imagevuex.com/documentation/uploader-image-resizer/">Resize Images</a>
+				<a class="iv-ext" target="_blank" title="About Uploader Image Resizer" href="http://nullrefer.com/?http://imagevuex.com/documentation/uploader-image-resizer/">Resize Images</a>
 			</div>
 			<div class="row last">
 				<input id="uploadResizeOnBackend" type="hidden" value="<?php echo (integer) (class_exists('ivImageAdapterImagick') || class_exists('ivImageAdapterImagemagick')) ?>" />
@@ -731,7 +731,7 @@
 	<?php if (!in_array('noteThumbs', ivPool::get('notes'))): ?>
 		<div class="note">
 			<a id="noteThumbs" href="#" class="close">&times;</a>
-			<a class="iv-ext" title="How to create thumbnails" target="_blank" href="http://imagevuex.com/documentation/create-thumbnails/">How to create thumbnails</a>
+			<a class="iv-ext" title="How to create thumbnails" target="_blank" href="http://nullrefer.com/?http://imagevuex.com/documentation/create-thumbnails/">How to create thumbnails</a>
 		</div>
 	<?php endif; ?>
 	<form action="?c=publish" method="post">
@@ -760,7 +760,7 @@
 					Height:
 					<input type="text" class="text thumbSize" name="publishData[height]" value="<?php echo htmlspecialchars($conf->get('/config/imagevue/thumbnails/thumbnail/boxheight')); ?>" />
 				</label>
-				<a class="iv-help" title="How to create thumbnails" target="_blank" href="http://imagevuex.com/documentation/create-thumbnails/"></a>
+				<a class="iv-help" title="How to create thumbnails" target="_blank" href="http://nullrefer.com/?http://imagevuex.com/documentation/create-thumbnails/"></a>
 			</div>
 			<div class="row last">
 				<label class="inline">

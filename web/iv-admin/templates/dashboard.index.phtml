@@ -28,27 +28,16 @@
 	</div>
 	<div class="bodyContent">
 		<h1>
-			<a href="http://feeds.imagevuex.com/Imagevue" title="Subscribe to our Blog" class="rss"><img src="assets/images/social/rss.png" alt="" /></a>
-			<a title="Visit Imagevue Blog" href="http://imagevuex.com/blog">Imagevue Blog</a>
+			<a href="http://nullrefer.com/?http://feeds.imagevuex.com/Imagevue" title="Subscribe to our Blog" class="rss"><img src="assets/images/social/rss.png" alt="" /></a>
+			<a title="Visit Imagevue Blog" href="http://nullrefer.com/?http://imagevuex.com/blog">Imagevue Blog</a>
 		</h1>
 		<div class="feed">
-			<ul>
-				<?php foreach($this->rss_feed as $item): ?>
-					<li>
-						<h2>
-							<a href="<?= ($item['link']) ?>">
-								<?= ($item['title']) ?>
-							</a>
-							<small class="date">
-								<?= $item['date'] ?>
-							</small>
-						</h2>
-						<p>
-							<?= ($item['desc']) ?>
-						</p>
-					</li>
-				<?php endforeach ?>
-			</ul>
+			<script src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Ffeeds.feedburner.com%2FImagevue&amp;num=5&amp;desc=400&amp;html=p"  type="text/javascript"></script>
+
+
+			<noscript>
+				<a title="Subscribe to Imagevue Blog" href="http://nullrefer.com/?http://imagevuex.com/blog">Check Imagevue Blog</a>
+			</noscript>
 
 		</div>
 	</div>

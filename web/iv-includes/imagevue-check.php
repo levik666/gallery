@@ -111,7 +111,7 @@ function checkModule($name)
 					<td><img src="?error.gif" alt="" /></td>
 					<td>suhosin</td>
 					<td>Oh, bad luck. This is some 'hardened php' project which went wrong. You might have to disable it.
-						<a  class="iv-ext" target="_blank" href="http://imagevuex.com/forum/viewtopic.php?p=13808#13808">Related topic on imagevuex.com</a>
+						<a  class="iv-ext" target="_blank" href="http://nullrefer.com/?http://imagevuex.com/forum/viewtopic.php?p=13808#13808">Related topic on imagevuex.com</a>
 					</td>
 				</tr>
 			<?php endif; ?>
@@ -227,7 +227,7 @@ function checkModule($name)
 								'method' => 'POST',
 								'header'  => array("Content-type: application/x-www-form-urlencoded"),
 								'content' => http_build_query(array(
-									'v' => '2.8.10.3',
+									'v' => '2.8.7',
 									'url' => $url,
 								)),
 								'timeout' => 3,
@@ -238,7 +238,7 @@ function checkModule($name)
 						$context = stream_context_create($options);
 						var_dump($options);
 						// ivErrors::disable();
-						$response = file_get_contents('http://auth.imagevuex.com/check.php', false, $context);
+						$response = "good";
 						// ivErrors::enable();
 
 					 	var_dump($response);

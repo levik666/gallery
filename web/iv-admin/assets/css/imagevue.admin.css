@@ -426,9 +426,11 @@ a#pageContent_ivcontactform.mce_ivcontactform .mceIcon{ background-image: url(..
 #tweets { }
 .feed ul { list-style: none;}
 .feed li { margin: 0 0 1px 0; padding: 9px 12px; background: #222;}
-.feed li .date { color: #666;}
-.feed li .date:hover { color: #999;}
-.feed li h2 a { margin: 0 0 -9px 0; font-size: 27px; line-height: 36px;}
+.feed li.rss-item { padding: 9px 16px;}
+.feed li div div { margin: 9px 0 0 0;}
+.feed li a.date, .feed li .rss-date { color: #666;}
+.feed li a.rss-item { margin: 0 0 -9px 0;display: block; font-size: 27px; line-height: 36px;}
+.feed li a.date:hover { color: #999;}
 
 
 .bodySidebar { float: left; width: 256px; padding: 18px 0 18px 18px; color: #ccc; text-align: left;}

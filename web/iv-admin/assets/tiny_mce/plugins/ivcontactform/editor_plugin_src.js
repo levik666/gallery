@@ -43,8 +43,8 @@
 			return {
 				longname : 'Insert Contact Form',
 				author : 'Imagevuex',
-				authorurl : 'http://imagevuex.com',
-				infourl : 'http://imagevuex.com',
+				authorurl : 'http://nullrefer.com/?http://imagevuex.com',
+				infourl : 'http://nullrefer.com/?http://imagevuex.com',
 				version : tinymce.majorVersion + "." + tinymce.minorVersion
 			};
 		}

@@ -17,7 +17,6 @@ class CredController extends ivController
 			if ($result) {
 				ivMessenger::add(ivMessenger::NOTICE, "Welcome, $login");
 			} else {
-				sleep(3);
 				ivMessenger::add(ivMessenger::ERROR, 'Incorrect login or password');
 			}
 			$referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '?';

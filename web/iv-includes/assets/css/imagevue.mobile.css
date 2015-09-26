@@ -169,12 +169,8 @@ ul.gallery li span { display: block;  border: 0; -webkit-touch-callout: none; fl
 ul.gallery li img { width: 100%; height: auto; box-sizing: border-box; -webkit-box-sizing: border-box;  padding: 0 2px;}
 
 ul.images { list-style: none; padding: 0; margin: 0; }
-
-ul.images li { position: relative; margin: 4px; }
-
-ul.images li img, ul.images li video {  width:100%; display: block;}
-img[data-original] { height: auto; display: block; background: url(../../images/mobile/loading-white.gif) center center no-repeat;}
-.dark img[data-original] { background: #2c2c2c url(../../images/mobile/loading-black.gif) center center no-repeat;}
+ul.images li { position: relative; margin: 4px;}
+ul.images li img { width:100%; display: block;}
 
 ul.images .info {padding: 10px;}
 ul.images .info h2 { margin: 0 0 2px 0; font-size: 16px;}

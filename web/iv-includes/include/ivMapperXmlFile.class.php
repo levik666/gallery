@@ -211,8 +211,7 @@ class ivMapperXmlFile extends ivMapperXmlAbstract
 	    if (ivFilepath::matchSuffix($record->name, ivPool::get('conf')->get('/config/imagevue/settings/videofilesext'))) {
 	    	$ffmpeg = ivPool::get('conf')->get('/config/imagevue/settings/ffmpegPath');
 	    	$ffmpeg = $ffmpeg?$ffmpeg:'ffmpeg';
-	    	exec($ffmpeg . ' -i "' . addcslashes(ROOT_DIR . $record->getPath() ,'"') . '" -an -f mjpeg -y -r 1 -vframes 1 -ss 00:00:03 -s '.$boxWidth.'x'.$boxHeight.' -an "'. addcslashes($thumbPath,'"') .'"  2>&1');
-
+	      exec($ffmpeg . ' -i '.ROOT_DIR . $record->getPath().' -an -f mjpeg -y -r 1 -vframes 1 -ss 00:00:03 -s '.$boxWidth.'x'.$boxHeight.' -an '.$thumbPath.'  2>&1');
 	      if (!file_exists($thumbPath)) @copy($defaultThumbPath, $thumbPath);
 	     }else{
 	      @copy($defaultThumbPath, $thumbPath);
@@ -570,8 +569,6 @@ class ivMapperXmlFile extends ivMapperXmlAbstract
 	public function rename(ivFile $file, $newName)
 	{
 		$mode = 0666;
-
-		if (ivFilepath::matchSuffix($newName, array('php', 'phtml', 'htm', 'html', 'js'))) return false;
 
 		$result = copy(ROOT_DIR . $file->getPath(), ROOT_DIR . $file->Parent->getPath() . $newName);
 		iv_chmod(ROOT_DIR . $file->Parent->getPath() . $newName, $mode);

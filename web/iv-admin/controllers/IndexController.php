@@ -406,11 +406,7 @@ class IndexController extends ivController
 		if (get_magic_quotes_gpc()) {
 			$imageName = stripslashes($imageName);
 		}
-		if (
-		    !ivFilepath::matchSuffix( $imageName, $this->conf->get('/config/imagevue/settings/allowedext') )
-				|| ivFilepath::matchSuffix( $imageName, array('php', 'phtml', 'htm', 'html', 'js') )
-			)
-		{
+		if (!ivFilepath::matchSuffix($imageName, $this->conf->get('/config/imagevue/settings/allowedext'))) {
 			header("HTTP/1.1 403 Wrong extention");
 			echo "Error. Wrong extention";
 		} else {

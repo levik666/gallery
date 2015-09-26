@@ -336,23 +336,4 @@ class ivFolder extends ivRecord
 		return $title;
 	}
 
-	public function getDescription($mobile=false)
-	{
-		if (!$mobile) return $this->description;
-
-		return $this->_fixLinksForMobile($this->description);
-	}
-
-	public function getPageContent($mobile=false)
-	{
-		if (!$mobile) return $this->pageContent;
-		return $this->_fixLinksForMobile($this->pageContent);
-	}
-
-	private function _fixLinksForMobile($text) {
-		$text = preg_replace('/href\s*=\s*"\/?#\/?/', 'href="?/', $text);
-		$text = preg_replace("/href\s*=\s*'\/?#\/?/", "href=\'?/", $text);
-		$text = preg_replace("/\<a\s*href\s*=/", '<a rel="external" href=', $text);
-		return $text;
-	}
 }

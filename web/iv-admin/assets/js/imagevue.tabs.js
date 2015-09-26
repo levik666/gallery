@@ -52,8 +52,7 @@
             $this.find(settings.linkSelector) :
             settings.linkSelector($this)
           ).filter(function() {
-            // return (/^#/).exec(($.browser.webkit ? decodeURIComponent($(this).attr('href')) : $(this).attr('href')).replace(window.location.href.split('#')[0], ''));
-            return (/^#/).exec($(this).attr('href').replace(window.location.href.split('#')[0], ''));
+            return (/^#/).exec(($.browser.webkit ? decodeURIComponent($(this).attr('href')) : $(this).attr('href')).replace(window.location.href.split('#')[0], ''));
           }).each(function() {
             addTab(this, data);
           });
