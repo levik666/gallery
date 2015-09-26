@@ -227,7 +227,7 @@ function checkModule($name)
 								'method' => 'POST',
 								'header'  => array("Content-type: application/x-www-form-urlencoded"),
 								'content' => http_build_query(array(
-									'v' => '2.8.7',
+									'v' => '2.8.9',
 									'url' => $url,
 								)),
 								'timeout' => 3,

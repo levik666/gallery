@@ -230,14 +230,18 @@ class ivMail
 		}
 
 		$phpMailer->IsHTML(true);
+
 		if (empty($this->_forceFrom)) {
 			$phpMailer->From = $from['email'];
 			$phpMailer->FromName = $from['name'];
 			$phpMailer->Sender = $from['email'];
+		} else if ($this->_forceFrom=='none') {
+
 		} else {
 			$phpMailer->From = $this->_forceFrom;
 			$phpMailer->Sender = $this->_forceFrom;
 		}
+
 		$phpMailer->AddReplyTo($from['email'], $from['name']);
 		$phpMailer->CharSet = 'UTF-8';
 		$phpMailer->Subject = $this->getSubject();

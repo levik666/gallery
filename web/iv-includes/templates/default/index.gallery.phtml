@@ -16,14 +16,16 @@
 	<?php endif; ?>
 	<title><?php echo htmlspecialchars(t($this->siteTitle)); ?></title>
 	<link rel="icon" type="image/png" href="favicon.png" />
+<!-- 	<meta name="msapplication-TileColor" content="#D83434"> -->
+	<meta name="msapplication-TileImage" content="<?php echo (file_exists('iv-config/apple-touch-icon.png'))?'iv-config/':IV_PATH . 'images/'; ?>apple-touch-icon.png" />
 
-		<meta property="og:title" content="<?php echo htmlspecialchars($this->siteTitle); ?>" />
-		<meta property="og:type" content="website" />
-	<?php if ($this->firstImage): ?>
-		<meta property="og:image" content="<?php echo pageURL().htmlspecialchars($this->firstImage->thumbnail); ?>?<?php echo htmlspecialchars($this->firstImage->getThumbnailMTime()); ?>" />
-	<?php endif; ?>
-		<meta property="og:url" content="<?php echo pageURL() ?>" />
-		<meta property="og:description" content="<?php echo htmlspecialchars($description); ?>" />
+	<meta property="og:title" content="<?php echo htmlspecialchars($this->siteTitle); ?>" />
+	<meta property="og:type" content="website" />
+<?php if ($this->firstImage): ?>
+	<meta property="og:image" content="<?php echo pageURL().htmlspecialchars($this->firstImage->thumbnail); ?>?<?php echo htmlspecialchars($this->firstImage->getThumbnailMTime()); ?>" />
+<?php endif; ?>
+	<meta property="og:url" content="<?php echo pageURL() ?>" />
+	<meta property="og:description" content="<?php echo htmlspecialchars($description); ?>" />
 
 	<?php if (IS_FIRSTTIME || ivAcl::isAdmin()): ?><link href="<?php echo htmlspecialchars(IV_PATH); ?>assets/css/imagevue.adminbar.css" rel="stylesheet" type="text/css" /><?php endif ?>
 	<link href="<?php echo htmlspecialchars(IV_PATH); ?>assets/css/imagevue.flash.css" rel="stylesheet" type="text/css" />
@@ -165,6 +167,7 @@
 						<?php if ($this->enabledHTML): ?><p>
 							<a href="?p=html">HTML Gallery</a> &rsaquo;<br/>
 							<a href="?p=sitemap">HTML Sitemap</a> &rsaquo;</p>
+							<a href="?p=sitemap.xml">Sitemap.xml</a> &rsaquo;</p>
 						<?php endif; ?>
 					</div>
 				</div>

@@ -27,7 +27,7 @@
 				<type description="File uploader to use" type="enum" options="swfupload,html">swfupload</type>
 				<width description="Width of the bounding box for resize" type="integer">1024</width>
 				<height description="Height of the bounding box for resize" type="integer">1024</height>
-				<resizeDefault type="boolean" description="Resize images before upload by default (you can controls this when you upload also)">false</resizeDefault>
+				<resizeDefault type="boolean" description="Resize images before upload by default (you can controls this when you upload also)">true</resizeDefault>
 				<overwrite type="boolean" description="">false</overwrite>
 			</uploader>
 			<autoTitling description="Sets filenames to appear as title by default. If set to false, titles will be empty unless added from the admin" type="boolean">true</autoTitling>
@@ -210,6 +210,7 @@
 					<items type="array" description="Toggle items to be displayed in the mainmenu tooltip" options="title,filecount,date,description,previewimage">title,filecount,description,previewimage</items>
 				</folderdescription>
 				<menu_logo type="string" description="Sets a logo above the menu. Using this setting overrides several other settings to facilitate the menu logo nicely. Use an absolute path, or a path relative from gallery root. Use PNG-24 or SWF with transparency."></menu_logo>
+				<menu_logo_link type="string" description="Sets a click link for the main menu logo. You can use an absolute path, or a relative swfaddress path like /#/start/ if you want it to go to the start page."></menu_logo_link>
 			</mainmenu>
 		</menu>
 		<misc>
@@ -252,7 +253,7 @@
 			<description type="string" description="Add a description to your gallery. This will be added to the source code of your gallery, and the search engines will use it to display information about your site in their listings">Another Gallery from Imagevuex.com</description>
 			<counters title="Footer code" type="text" description="Add code for any 3rd party counters or stats, it will be displayed below the footer in div#counters"></counters>
 			<htmlRedirect title="Redirect to Flash gallery" type="boolean" description="Enable this to redirect users to Flash gallery if they have flash installed">true</htmlRedirect>
-			<disableSitemap type="boolean" description="Disable the sitemap">false</disableSitemap>
+			<disableSitemap type="boolean" description="Disables the sitemap.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Note:&lt;/b&gt; You can submit the sitemap from &lt;a href='../?p=sitemap.xml'&gt;this link&lt;/a&gt; to Google Webmaster">false</disableSitemap>
 		</seo>
 		<fotomoto>
 			<enabled type="boolean" description="Enable or disable the Fotomoto shopping cart option. You will need Fotmoto account to use this option">false</enabled>

@@ -361,8 +361,10 @@ SWFUpload.prototype.getMovieElement = function () {
 	}
 
 	if (this.movieElement === null) {
-		throw "Could not find Flash element";
+		console.log("Could not find Flash element");
 	}
+
+
 
 	return this.movieElement;
 };

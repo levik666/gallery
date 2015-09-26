@@ -4,6 +4,8 @@
 	<div class="bodyContent single">
 		<h1>Authorization</h1>
 
+
+
 		<div id="result" class="pageMessenger">
 		</div>
 
@@ -13,7 +15,6 @@
 					<tr>
 						<th colspan="2">
 							Domain successfully authorized
-							<a class="iv-help" target="_blank" title="What is Authorization?" href="http://nullrefer.com/?http://imagevuex.com/documentation/authorization/"></a>
 						</th>
 					</tr>
 				</thead>
@@ -42,8 +43,8 @@
 	<script type="text/javascript">
 	  $(document).ready(function() {
 	      $.cookie('authCheck', "good");
-	      $('#authForm').submit(function () {
-	          $('#result').html('');
+	    $('#authForm').submit(function () {
+	        $('#result').html('');
                   $('#result')[0].innerHTML += '<div class="message">Domain successfully authorized</div>';
 	      });
 	  });

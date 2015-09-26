@@ -82,6 +82,14 @@ abstract class ivRecord
 		return $this->_primary;
 	}
 
+	public final function getLink($forceMobile = false) {
+		if ($forceMobile) {
+			return preg_replace('/^\/?#\/?/', '?/', $this->link);
+		} else {
+			return $this->link;
+		}
+	}
+
 	public final function __set($name, $value)
 	{
 		if (in_array($name, $this->_propertyNames) && isset($this->_data[$name]) && !empty($this->_data[$name])) {

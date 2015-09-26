@@ -32,7 +32,7 @@
 		<div id="textPage">
 			<h1><?php echo strip_icon(t($this->folder->getTitle())); ?></h1>
 			<div>
-				<?php echo $this->replaceSnippets(t($this->folder->pageContent)); ?>
+				<?php echo $this->replaceSnippets(t($this->folder->getPageContent())); ?>
 			</div>
 		</div>
 	<?php else: ?>

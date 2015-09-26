@@ -175,7 +175,7 @@
 							&nbsp;selected to:
 						</span>
 						<span>
-							<select onchange="if ($('#groupCopyCheckbox').attr('checked')) {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'copyFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} else {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'moveFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} $(this.form).submit();">
+							<select onchange="if ($('#groupCopyCheckbox').prop('checked')) {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'copyFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} else {$(this.form).attr('action', '<?php echo $this->url(array('a' => 'moveFiles', 'path' => $this->folder->getPrimary())) ?>&amp;target=' + this.value)} $(this.form).submit();">
 								<?php foreach ($this->folderTreeIterator as $folder):?>
 									<option value="<?php echo htmlspecialchars($folder->getPrimary()); ?>" <?php echo (ivFilepath::directory($this->path) == $folder->getPrimary() ? 'selected="selected"' : ''); ?>><?php echo str_repeat('--', $this->folderTreeIterator->getDepth()); ?> <?php echo smartStripTagsSubstr(t($folder->getTitle())); ?>&nbsp;&nbsp;</option>
 								<?php endforeach; ?>

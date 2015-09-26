@@ -102,6 +102,11 @@ $routingRules[] = array(
 );
 
 $routingRules[] = array(
+	'match' => array('p' => 'sitemap.xml'),
+	'routeTo' => array('controller' => 'index', 'action' => 'sitemapXML')
+);
+
+$routingRules[] = array(
 	'match' => array('p' => 'share'),
 	'routeTo' => array('controller' => 'index', 'action' => 'share')
 );

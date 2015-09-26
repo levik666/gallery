@@ -77,7 +77,7 @@ if (!Imagevue)
       $(el).toggleClass('open').next().toggle();
     }, false);
     new Imagevue.CookieStorage('editNextCheckbox', '#editNextCheckbox', function(el) {
-      $(el).attr('checked', !$(el).attr('checked'));
+      $(el).attr('checked', !$(el).prop('checked'));
     }, true);
     new Imagevue.CookieStorage('ivnotes', '.note a.close', function(el) {
       $(el.parentNode).effect('fade');

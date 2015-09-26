@@ -514,12 +514,12 @@ function getHost()
 
 function authCheck()
 {
-	setcookie('authCheck', "good");
-	$_COOKIE['authCheck'] = "good";
-	
+	setcookie('authCheck', 'good');
+	$_COOKIE['authCheck'] = 'good';
+
 	return true;
-	
-	if (false == strpos($_SERVER['SERVER_NAME'], '.') || preg_match('/^[\d\.]+$/', $_SERVER['SERVER_NAME'])) {
+
+    if (false == strpos($_SERVER['SERVER_NAME'], '.') || preg_match('/^[\d\.]+$/', $_SERVER['SERVER_NAME'])) {
 		return true;
 	}
 
@@ -534,7 +534,7 @@ function authCheck()
 				'method' => 'POST',
 				'header'  => array("Content-type: application/x-www-form-urlencoded"),
 				'content' => http_build_query(array(
-					'v' => '2.8.7',
+					'v' => '2.8.9',
 					'url' => $url,
 				)),
 				'timeout' => 3,

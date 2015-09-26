@@ -1,6 +1,41 @@
 Imagevue X2 quickstart guide and other information:
 http://imagevuex.com/documentation
 
+Imagevue 2.8.9 - Apr 8, 2013
+
+Sitemap.xml: ?p=sitemap.xml
+New menu logo link option
+Fix for video playback on some mobile devices
+Fix for the new dashboard
+
+
+Imagevue 2.8.8.2 - Mar 18, 2013
+
+Fix for Upload Resize always being forced
+New RSS feed parser in Dashboard
+Fix for TinyMCE insert images dimensions
+
+
+Imagevue 2.8.8.1 - Mar 7, 2013
+
+Fix for HTML Textpages bug introduced in a previous release
+Fix for contact form on some servers
+Fix for mobile Google Analytics
+Removed buggy loading dialog in Flash
+
+
+Imagevue X2.8.8 - Feb 6, 2013
+
+Lazy loading images in mobile gallery
+Favicon for Internet Explorer 10
+Mobile video player in Images mode
+Added audio player pause if Youtube/vimeo lightbox video
+Fixed Mobile gallery on iPhone 5
+Fixed Mobile links on images, thumbnails, description and textpages
+Fixed Video Thumbnails with spaces and quotes in file names
+Fixed Resize on Upload
+Fixed close button removal, if not autohide, when navigating from picture to textpage
+Fixed map view
 
 Imagevue X2.8.7 - Dec 30, 2012
 

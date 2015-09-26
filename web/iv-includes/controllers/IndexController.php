@@ -227,6 +227,24 @@ class IndexController extends ivController
 	 */
 	public function sitemapAction()
 	{
+		$this->_getSitemap();
+	}
+
+	/**
+	 * Display sitemap.xml
+	 *
+	 */
+	public function sitemapXMLAction()
+	{
+		$this->_getSitemap();
+	}
+
+	/**
+	* Actual sitemap thing
+	*
+	*/
+
+	private function _getSitemap() {
 		$this->_disableLayout();
 		if (!$this->conf->get('/config/imagevue/seo/disableSitemap')) {
 			$this->view->assign('siteTitle', $this->conf->get('/config/imagevue/settings/sitetitle'));
@@ -245,6 +263,7 @@ class IndexController extends ivController
 			exit(0);
 		}
 	}
+
 
 	/**
 	 * Share page

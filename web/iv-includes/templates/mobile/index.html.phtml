@@ -2,8 +2,8 @@
 	$theConfig = ivPool::get('conf');
 	$this->placeholder->set('currentPath', $this->folder->getPrimary());
 	$theFolder = $this->folder;
-	$theTitle = strip_icon(t($theFolder->getTitle()));
-	$theDescription = t($theFolder->description);
+	$theTitle = $theFolder->getCleanTitle();
+	$theDescription = t($theFolder->getDescription(true));
 	$lang = ivPool::get('lang');
 
 	if ($theParent = $theFolder->Parent) {
@@ -15,7 +15,7 @@
 	}
 
 	$this->placeholder->set('pageID', str_replace(DS, '', $theFolder->getPrimary()));
-	$this->placeholder->set('theTitle', str_replace(DS, '', $theTitle));
+	$this->placeholder->set('theTitle', $theTitle);
 
 	if (isset($_GET['theme']) && $jqueryMobileTheme = strtolower($_GET['theme'])) {
 		if (!in_array($jqueryMobileTheme, array('light', 'dark'))) $jqueryMobileTheme=$theConfig->get('/config/imagevue/mobile/jqueryMobileTheme');
@@ -71,9 +71,9 @@
 		<!-- TEXTPAGE -->
 
 		<div class="textPage">
-			<h1><?php echo strip_icon(strip_tags(t($theTitle))); ?></h1>
+			<h1><?php echo $theTitle; ?></h1>
 			<div>
-				<?php echo $this->replaceSnippets(t($theFolder->pageContent)); ?>
+				<?php echo $this->replaceSnippets(t($theFolder->getPageContent(true))); ?>
 			</div>
 		</div>
 
@@ -151,68 +151,84 @@
 
 	<?php if (count($theFolder->Files) && !$theFolder->isPage()): ?>
 
-		<!-- IMAGES -->
-		<?php if ($theFolder->description) : ?>
+		<!-- GALLERY -->
+		<?php if ($theDescription) : ?>
 			<h1 class="title"><?php echo strip_icon(strip_tags(t($theFolder->getTitle()))) ?></h1>
-			<p class="description"><?php echo t($theFolder->description) ?></p>
+			<p class="description"><?php echo $theDescription ?></p>
 		<?php endif ?>
 
 		<?php $this->placeholder->set('pageClass', 'gallery-page') ?>
+
 		<?php if ($theConfig->get('/config/imagevue/mobile/view')=='Thumbnails'): ?>
+		<!-- THUMBNAILS -->
 		<ul class="gallery"><?php foreach ($theFolder->Files as $item): ?><?php if (
 								in_array(strtolower(ivFilepath::suffix($item->name)), $theConfig->get('/config/imagevue/settings/includefilesext'))
 								&& strtolower(ivFilepath::suffix($item->name)) != 'flv'
-								&& !($item->link)
 							):
 				?><li><span><a
-								<?php echo !is_a($item, 'ivFileVideo')?'class="img"':'' ?>
+								<?php echo !is_a($item, 'ivFileVideo') && !$item->link ? 'class="img"':'' ?>
 								share="<?php echo smart_urlencode($item->getPrimary()); ?>"
 								rel="external"
-								href="<?php echo $item->getPath() ?>"
-							><img src="<?php
+								href="<?php echo $item->link? $item->getLink(true):$item->getPath() ?>"
+							><img
+									data-original="<?php
 									if ((ivPath::canonizeRelative(substr($item->thumbnail, 0, strlen($this->contentPath))) !== $this->contentPath)) {
 										echo $this->url(array('c' => 'xml', 'a' => 'thumb', 'path' => $item->getPrimary()));
 								 	} else {
 								 		$size=getimagesize($item->thumbnail);
 										echo htmlentities($item->thumbnail, ENT_QUOTES) . '?' . $item->getThumbnailMTime();
 									}
-									?>" width="<?php echo $size[0] ?>"
-											height="<?php echo $size[1] ?>"
-											alt="<?php echo htmlspecialchars(strip_tags(t($item->description))); ?>"
-											title="<?php echo $item->getCleanTitle(); ?>"
+									?>"
+									src="iv-includes/images/nil.gif"
+									width="<?php echo $item->width ?>"
+									height="<?php echo $item->height ?>"
+									width="<?php echo $size[0] ?>"
+									height="<?php echo $size[1] ?>"
+									alt="<?php echo htmlspecialchars(strip_tags(t($item->description))); ?>"
+									title="<?php echo $item->getCleanTitle(); ?>"
 								/></a></span></li><?php endif; ?><?php endforeach; ?></ul>
 			<?php else : ?>
+			<!-- IMAGES -->
 				<?php
 					if ($theConfig->get('/config/imagevue/mobile/view')=='Images') { $mode='overlay'; $default='off'; }
 					elseif ($theConfig->get('/config/imagevue/mobile/view')=='Images with Info') { $mode='overlay'; $default=''; }
 					else { $mode='below'; $default=''; }
 				?>
+
 				<ul class="images <?php echo $mode; ?>">
 					<?php foreach ($theFolder->Files as $item): ?>
 						<?php
 							$d=htmlspecialchars(strip_tags(t($item->description)));
 							$t=$item->getCleanTitle();
 						?>
+						<?php if (strtolower(ivFilepath::suffix($item->name)) != 'flv'): ?>
+							<li>
+								<?php if (is_a($item, 'ivFileVideo')): ?>
+									<video controls src="<?php echo htmlspecialchars($item->getPath()) ?>"></video>
+								<?php else: ?>
 
-						<?php if (
-									in_array(strtolower(ivFilepath::suffix($item->name)), $theConfig->get('/config/imagevue/settings/includefilesext'))
-									&& strtolower(ivFilepath::suffix($item->name)) != 'flv'
-									) :
+								<?php
+									if ( in_array(strtolower(ivFilepath::suffix($item->name)), $theConfig->get('/config/imagevue/settings/includefilesext'))) :
 									$fotomotoId = preg_replace('/\W+/', '_', $item->getPrimary());
-						?>
+								?>
+									<?php if ($item->link) :?><a href="<?php echo htmlspecialchars($item->getLink(true)) ?>" rel="external"><?php endif; ?>
+									<img
+										id="<?php echo htmlspecialchars($fotomotoId); ?>"
+										src="iv-includes/images/nil.gif"
+										width="<?php echo $item->width ?>"
+										height="<?php echo $item->height ?>"
+										data-original="<?php echo htmlspecialchars($item->getPath()) ?>"
+										alt="<?php echo $d ?>"
+										title="<?php echo $item->getCleanTitle() ?>"
+									/>
+									<?php if ($item->getLink(true)) :?></a><?php endif; ?>
 
-								<li>
-									<?php if ($item->link) :?><a href="<?php echo htmlspecialchars($item->link) ?>" rel="external"><?php endif; ?>
-									<img id="<?php echo htmlspecialchars($fotomotoId); ?>"
-													src="<?php echo $item->getPath() ?>"
-													alt="<?php echo $d ?>"
-													title="<?php echo $item->getCleanTitle() ?>" />
-									<?php if ($item->link) :?></a><?php endif; ?>
-
+									<?php endif; ?>
+								<?php endif; ?>
 								<?php	if ($d || $t) : ?>
 									<div class="info <?php echo $default ?>">
 										<?php if ($item->link) : ?>
-											<a  class="icon-right" title="This file has a link attached" href="<?php echo htmlspecialchars($item->link) ?>"></a>
+											<a  class="icon-right" title="This file has a link attached" href="<?php echo htmlspecialchars($item->getLink(true)) ?>"></a>
 										<?php endif ?>
 										<?php if (is_a($this->file, 'ivFileImage') && $coordinates=$item->getGPSCoords()): ?>
 						 						<a 	id="map"
@@ -230,13 +246,11 @@
 										<?php echo ($t)?"<h2>{$t}</h2>":''; ?>
 										<?php echo ($d)?"<p>{$d}</p>":''; ?>
 									</div>
-								<?php endif ?>
-
-								</li>
-
-						<?php endif; ?>
-					<?php endforeach; ?>
-				</ul><?php
-		 endif;
-	endif;
-endif; ?>
+							<?php endif; ?>
+						</li>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>
