@@ -1,216 +1,173 @@
 <!DOCTYPE html>
-<html lang="uk">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Фотогалерея сайту вчителя початкових класів">
-    <meta name="author" content="Наталії Полукової">
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Фотогалерея сайту вчителя початкових класів Наталії Полукової</title>
 
-    <title>Фотогалерея сайту вчителя початкових класів Наталії Полукової</title>
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- font awesome -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="css/animate.css" rel="stylesheet" />
-    <!-- Squad theme CSS -->
-    <link href="css/style.css" rel="stylesheet">
-	<link href="color/default.css" rel="stylesheet">
+<!-- bootstrap -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 
-	<!-- animate.css -->
-	<link rel="stylesheet" href="assets/animate/animate.css" />
-	<link rel="stylesheet" href="assets/animate/set.css" />
+<!-- animate.css -->
+<link rel="stylesheet" href="assets/animate/animate.css" />
+<link rel="stylesheet" href="assets/animate/set.css" />
 
-	<!-- gallery -->
-	<link rel="stylesheet" href="assets/gallery/blueimp-gallery.min.css">
+<!-- gallery -->
+<link rel="stylesheet" href="assets/gallery/blueimp-gallery.min.css">
+
+<!-- favicon -->
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+<link rel="stylesheet" href="assets/style.css">
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-	<!-- Preloader -->
-	<div id="preloader">
-	  <div id="load"></div>
-	</div>
+<body>
+<div class="topbar animated fadeInLeftBig"></div>
 
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <h1>Сайт Наталії Полукової</h1>
-                </a>
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="#home"><img src="images/logo.png" alt="logo"></a>
+              <!-- #Logo Ends -->
+
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="index.html#about">Про мене</a></li>
-		<li><a href="index.html#contact">Контакт</a></li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Інші <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="active"><a href="#service">Фотогалерея</a></li>
-            <li><a href="#">Відео матеріали</a></li>
-            <li><a href="#">Блог</a></li>
-			  <li><a href="#">Форум</a></li>
-          </ul>
-        </li>
-      </ul>
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right scroll">
+              	<li><a href="https://natasha.herokuapp.com">Головна</a></li>
+                 <li class="active"><a href="#works">Фотогалеря</a></li>
+              </ul>
             </div>
-            <!-- /.navbar-collapse -->
+            <!-- #Nav Ends -->
+
+          </div>
         </div>
-        <!-- /.container -->
-    </nav>
 
-    <!-- Section: intro -->
-    <section id="intro" class="intro">
-	
-		<div class="slogan">
-			<h2>Вітаю Вас на моєму сайті!</h2>
-			<h4>Має значення тільки те знання, яке використовується на практиці.</h4>
-		</div>
-		<div class="page-scroll">
-			<a href="#about" class="btn btn-circle">
-				<i class="fa fa-angle-double-down animated"></i>
-			</a>
-		</div>
-    </section>
-	<!-- /Section: intro -->
-
-	<!-- Section: services -->
-	<section id="service" class="home-section text-center bg-gray">
-
-		<div class="heading-about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="wow bounceInDown" data-wow-delay="0.4s">
-							<div class="section-heading">
-								<h2>Фотогалерея</h2>
-								<i class="fa fa-2x fa-angle-down"></i>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<!-- works -->
-			<div id="works"  class=" clearfix grid">
-				<figure class="effect-oscar  wowload fadeIn">
-					<img src="img/portfolio/1.jpg" alt="img01"/>
-					<figcaption>
-						<h2>Призери золотого колоска 2013</h2>
-						<p><a href="img/portfolio/1.jpg" title="Призери золотого колоска 2013" data-gallery>Дивитись більше</a></p>
-					</figcaption>
-				</figure>
-				<figure class="effect-oscar  wowload fadeInUp">
-					<img src="img/portfolio/2.jpg" alt="img01"/>
-					<figcaption>
-						<h2>Свято Букварика</h2>
-						<p><a href="img/portfolio/2.jpg" title="Свято Букварика" data-gallery>Дивитись більше</a></p>
-					</figcaption>
-				</figure>
-				<figure class="effect-oscar  wowload fadeInUp">
-					<img src="img/portfolio/3.jpg" alt="img01"/>
-					<figcaption>
-						<h2>У вільний час</h2>
-						<p><a href="img/portfolio/3.jpg" title="У вільний час" data-gallery>Дивитись більше</a></p>
-					</figcaption>
-				</figure>
-				<figure class="effect-oscar  wowload fadeInUp">
-					<img src="img/portfolio/7.jpg" alt="img01"/>
-					<figcaption>
-						<h2>Наші уроки</h2>
-						<p><a href="img/portfolio/7.jpg" title="Наші уроки" data-gallery>Дивитись більше</a></p>
-					</figcaption>
-				</figure>
-				<figure class="effect-oscar  wowload fadeInUp">
-					<img src="img/portfolio/5.jpg" alt="img01"/>
-					<figcaption>
-						<h2>Конкурс закладок</h2>
-						<p><a href="img/portfolio/5.jpg" title="Конкурс закладок" data-gallery>Дивитись більше</a></p>
-					</figcaption>
-				</figure>
-
-				<figure class="effect-oscar  wowload fadeInUp">
-					<img src="img/portfolio/6.jpg" alt="img01"/>
-					<figcaption>
-						<h2>Наш клас</h2>
-						<p><a href="img/portfolio/6.jpg" title="Наш клас" data-gallery>Дивитись більше</a></p>
-					</figcaption>
-				</figure>
-			</div>
-			<!-- works -->
-	</section>
-	<!-- /Section: services -->
-
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="wow shake" data-wow-delay="0.4s">
-					<div class="page-scroll marginbot-30">
-						<a href="#intro" id="totop" class="btn btn-circle">
-							<i class="fa fa-angle-double-up animated"></i>
-						</a>
-					</div>
-					</div>
-					<p>&copy;Copyright 2015 - Natalia Polukova. All rights reserved.</p>
-				</div>
-			</div>	
-		</div>
-	</footer>
-
-	<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-		<!-- The container for the modal slides -->
-		<div class="slides"></div>
-		<!-- Controls for the borderless lightbox -->
-		<h3 class="title">Title</h3>
-		<a class="prev">‹</a>
-		<a class="next">›</a>
-		<a class="close">×</a>
-		<!-- The modal dialog, which will be used to wrap the lightbox content -->
-	</div>
+      </div>
+    </div>
+<!-- #Header Starts -->
 
 
-	<!-- jquery -->
-	<script src="assets/jquery.js"></script>
+<!-- works -->
+      <div id="works"  class=" clearfix grid">
+        <figure class="effect-oscar  wowload fadeIn">
+          <img src="images/portfolio/1.jpg" alt="img01"/>
+          <figcaption>
+            <h2>Призери золотого колоска 2013</h2>
+            <p><a href="images/portfolio/1.jpg" title="Призери золотого колоска 2013" data-gallery>Дивитись більше</a></p>
+          </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+          <img src="images/portfolio/2.jpg" alt="img01"/>
+          <figcaption>
+            <h2>Свято Букварика</h2>
+            <p><a href="images/portfolio/2.jpg" title="Свято Букварика" data-gallery>Дивитись більше</a></p>
+          </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+          <img src="images/portfolio/3.jpg" alt="img01"/>
+          <figcaption>
+            <h2>У вільний час</h2>
+            <p><a href="images/portfolio/3.jpg" title="У вільний час" data-gallery>Дивитись більше</a></p>
+          </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+          <img src="images/portfolio/7.jpg" alt="img01"/>
+          <figcaption>
+            <h2>Наші уроки</h2>
+            <p><a href="images/portfolio/7.jpg" title="Наші уроки" data-gallery>Дивитись більше</a></p>
+          </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+          <img src="images/portfolio/5.jpg" alt="img01"/>
+          <figcaption>
+            <h2>Конкурс закладок</h2>
+            <p><a href="images/portfolio/5.jpg" title="Конкурс закладок" data-gallery>Дивитись більше</a></p>
+          </figcaption>
+        </figure>
 
-	<!-- wow script -->
-	<script src="assets/wow/wow.min.js"></script>
-
-    <!-- Core JavaScript Files -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>	
-	<script src="js/jquery.scrollTo.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="js/custom.js"></script>
-
-
-	<!-- jquery mobile -->
-	<script src="assets/mobile/touchSwipe.min.js"></script>
-	<script src="assets/respond/respond.js"></script>
-
-	<!-- gallery -->
-	<script src="assets/gallery/jquery.blueimp-gallery.min.js"></script>
-
-	<!-- custom script -->
-	<script src="assets/script.js"></script>
+        <figure class="effect-oscar  wowload fadeInUp">
+          <img src="images/portfolio/6.jpg" alt="img01"/>
+          <figcaption>
+            <h2>Наш клас</h2>
+            <p><a href="images/portfolio/6.jpg" title="Наш клас" data-gallery>Дивитись більше</a></p>
+          </figcaption>
+        </figure>
+      </div>
+      <!-- works -->
 
 
 
+<!-- Footer Starts -->
+<div class="footer text-center spacer">
+<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> <a href="#"><i class="fa fa-flickr fa-2x"></i></a> </p>
+Copyright 2015 Natalia Polukova. All rights reserved.
+</div>
+<!-- # Footer Ends -->
+<a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
+
+
+
+
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">Title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->    
+</div>
+
+
+
+<!-- jquery -->
+<script src="assets/jquery.js"></script>
+
+<!-- wow script -->
+<script src="assets/wow/wow.min.js"></script>
+
+
+<!-- boostrap -->
+<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript" ></script>
+
+<!-- jquery mobile -->
+<script src="assets/mobile/touchSwipe.min.js"></script>
+<script src="assets/respond/respond.js"></script>
+
+<!-- gallery -->
+<script src="assets/gallery/jquery.blueimp-gallery.min.js"></script>
+
+<!-- custom script -->
+<script src="assets/script.js"></script>
 
 </body>
-
 </html>
